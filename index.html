@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MakekeBlog - Un espace minimaliste pour partager vos idées et histoires.">
+    <meta name="author" content="Jonas">
+    <title>MakekeBlog | Vos idées, partagées.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">MakekeBlog.</div>
+                <button id="create-btn" class="btn">
+                    + Nouvel Article
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Partagez votre vision <br> avec le monde.</h1>
+            <p>Bienvenue sur votre espace personnel. Publiez, lisez et inspirez-vous.</p>
+        </section>
+
+        <section id="articles-container" class="articles-grid">
+            <!-- Les articles seront injectés ici par JavaScript -->
+        </section>
+
+        <section id="article-view" class="article-view hidden">
+            <button id="back-btn" class="btn btn-secondary">← Retour</button>
+            <article class="article-full">
+                <img id="view-image" src="" alt="" class="article-full-image">
+                <div class="article-full-content">
+                    <span id="view-date" class="article-date"></span>
+                    <h1 id="view-title" class="article-title-large"></h1>
+                    <div id="view-body" class="article-body"></div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Modal de création d'article -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Nouvel Article</h2>
+                <button id="close-modal" class="close-modal">&times;</button>
+            </div>
+            <form id="post-form">
+                <div class="form-group">
+                    <label for="post-title">Titre</label>
+                    <input type="text" id="post-title" class="form-control" placeholder="Titre de votre article"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="post-image">URL de l'image (optionnel)</label>
+                    <input type="url" id="post-image" class="form-control" placeholder="https://exemple.com/image.jpg">
+                    <small style="color: var(--text-secondary); display: block; margin-top: 5px;">Laissez vide pour une
+                        image aléatoire.</small>
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Contenu</label>
+                    <textarea id="post-content" class="form-control" placeholder="Écrivez votre histoire..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%">Publier</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
